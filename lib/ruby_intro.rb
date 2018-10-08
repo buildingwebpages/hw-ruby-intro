@@ -19,7 +19,14 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  return false if arr.length < 2
+  
+  (arr.length - 1).times do |i|
+    (i + 1).upto(arr.length - 1) do |j|
+      return true if arr[i] + arr[j] == n
+    end
+  end
+  false
 end
 
 # Part 2
