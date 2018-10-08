@@ -3,11 +3,19 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.inject(0, :+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  return 0 if arr.empty?
+  return arr[0] if arr.length == 1
+  
+  max_num = arr.max
+  max_idx = arr.index(max_num)
+  arr.delete_at(max_idx)
+  sum = max_num + arr.max
+  arr.insert(max_idx, max_num)
+  sum
 end
 
 def sum_to_n? arr, n
