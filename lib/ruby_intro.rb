@@ -40,7 +40,9 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return false unless s =~ /^[01]+$/
+  return true if s == "0"
+  s.end_with?("00") ? true : false 
 end
 
 # Part 3
